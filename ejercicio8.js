@@ -12,6 +12,7 @@ const avengers = [
   'Captain M.'
 ]
 function findLongestWord(stringList) {
+  // Creamos un array,llamado longword, vacío en el que se introducirán mediante el siguiente bucle for las longitudes de todos los strings,
   let longword = []
   for (let i = 0; i < avengers.length; i++) {
     let hero = avengers[i]
@@ -19,21 +20,25 @@ function findLongestWord(stringList) {
       longword[i] = j
     }
   }
-  console.log('El array longword se compone de :', longword)
-  // Ya tenemos el array longword completo.
-  let longwordsort = longword.sort((a, b) => a - b)
-  console.log('El array ordenado se compone de:', longwordsort)
-  if (
-    longwordsort[longwordsort.length - 1] ===
-      longwordsort[longwordsort.length - 2] ||
-    longwordsort[longwordsort.length - 3] ===
-      longwordsort[longwordsort.length - 1] ||
-    longwordsort[longwordsort.length - 4] ===
-      longwordsort[longwordsort.length - 1]
-  ) {
-    console.log('Hay varios elementos iguales, de la mayor longitud.')
-  }
+  // Ordenamos de menor a mayor las longitudes de caracteres
+  const longwordsort = longword.sort((a, b) => a - b)
+  //Buscamos la cantidad de caracteres que tienen los string más largos en la variable longest
   let longest = longwordsort[longwordsort.length - 1]
-  console.log('El nombre más largo contiene:', longest, 'caracteres')
+  // Volvemos a crear en array inicial porque lo tenemos ordenado por sort y no nos sirve
+  for (let i = 0; i < avengers.length; i++) {
+    let hero = avengers[i]
+    for (let j = 0; j <= hero.length; j++) {
+      longword[i] = j
+    }
+  }
+  i = 0
+  position = []
+  // Con el siguiente bucle "while" localizamos el primer string con el mayor número de caracteres.
+  while (longword[i] != longest) {
+    i = i + 1
+    position = i
+  }
+  console.log('El primer nombre más largo es: ' + avengers[position])
 }
+
 findLongestWord(avengers)

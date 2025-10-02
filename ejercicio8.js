@@ -20,9 +20,10 @@ function findLongestWord(stringList) {
       longword[i] = j
     }
   }
+  console.log(longword)
   // Ordenamos de menor a mayor las longitudes de caracteres
   const longwordsort = longword.sort((a, b) => a - b)
-  //Buscamos la cantidad de caracteres que tienen los string más largos en la variable longest
+  //Buscamos el string más largo en el array longwordsort.
   let longest = longwordsort[longwordsort.length - 1]
   // Volvemos a crear en array inicial porque lo tenemos ordenado por sort y no nos sirve
   for (let i = 0; i < avengers.length; i++) {
@@ -38,6 +39,7 @@ function findLongestWord(stringList) {
     i = i + 1
     position = i
   }
+  console.log(position)
   console.log('El primer nombre más largo es: ' + avengers[position])
 }
 

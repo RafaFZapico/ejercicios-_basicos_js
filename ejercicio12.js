@@ -15,7 +15,7 @@ Puedes usar este array para probar tu función:*/
   'pasta',
   'soda'
 ]*/
-const duplicates = ['a', 'c', 'a', 'd', 'b', 'd']
+const duplicates = ['d', 'b', 'd', 'a', 'c', 'a']
 const original = duplicates
 const eraser = []
 console.log('El listado con duplicados es: ', original)
@@ -41,7 +41,9 @@ function removeDuplicates(list) {
         console.log('hay un duplicado y es: ' + duplicates[j])
         //a continuación añadimos al final del array eraser un elemento duplicado.
         eraser[eraser.length] = original[i]
+        console.log('------------------------------')
         console.log('el array eraser es: ', eraser)
+        console.log('------------------------------')
       }
       j = j + 1
     }

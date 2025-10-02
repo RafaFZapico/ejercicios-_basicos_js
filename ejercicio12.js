@@ -2,7 +2,7 @@
 Valores únicos: Crea una función que reciba por parámetro un array y compruebe si existen elementos duplicados, en caso que existan los elimina para retornar un array sin los elementos duplicados.
 Pista: puedes generar un nuevo array y devolverlo.
 Puedes usar este array para probar tu función:*/
-/*const duplicates = [
+const listado = [
   'sushi',
   'pizza',
   'burger',
@@ -14,90 +14,39 @@ Puedes usar este array para probar tu función:*/
   'onion rings',
   'pasta',
   'soda'
-]*/
-const duplicates = ['d', 'b', 'd', 'a', 'c', 'a']
-const original = duplicates
-const eraser = []
-console.log('El listado con duplicados es: ', original)
-function removeDuplicates(list) {
-  let j
-  // bucle para recorrer el array "original"
-  for (let i = 0; i < original.length; i++) {
-    console.log('vuelta del bucle for que recorre el array "original": ' + i)
-    let x = original[i]
-    console.log('elemento seleccionado de original: ' + i + ' º')
-    j = i + 1
-    console.log('i vale: ' + i)
-    console.log('j vale: ' + j)
-    // bucle while para comparar un elemento del array con todos los demás
-    while (j < original.length) {
-      console.log('vuelta de bucle while: ' + j)
-      //console.log(duplicates.length + ' elementos tiene el array duplicates')
-      console.log(original[i])
-      console.log(original[j])
-      // condicional que detecta si hay un elemento duplicado
-      if (x === original[j]) {
-        console.log('se cumple condición if')
-        console.log('hay un duplicado y es: ' + duplicates[j])
-        //a continuación añadimos al final del array eraser un elemento duplicado.
-        eraser[eraser.length] = original[i]
-        console.log('------------------------------')
-        console.log('el array eraser es: ', eraser)
-        console.log('------------------------------')
-      }
-      j = j + 1
-    }
+]
+let vfor = 1
+for (let i = 0; i < listado.length; i++) {
+  let j = i + 1
+  console.log('listado[i] vale: ', listado[i], 'listado[j] vale: ', listado[j])
 
-    console.log('i vale: ' + i)
-    console.log('j vale: ' + j)
-  }
-  // El código anterior funciona perfectamente si hay duplicados, pero no funciona correctamente si se repite más de dos veces.
-  //let eraser = ['a', 'd']
-  // Segundo bucle for para borrar los duplicados.
-  /*for (let i = 0; i < eraser.length; i++) {
-    let j = 0
+  let vwhile = 1
+  while (listado[i] != listado[j] && j < listado.length - 1) {
+    j = j + 1
+    position = j
+
+    console.log('i vale: ', i, ' j vale: ', j)
     console.log(
-      'bucle for para borrado. Vuelta:  ',
-      i,
-      '   j vale: ',
-      j,
-      '   i vale: ',
-      i
+      'listado[i] vale: ',
+      listado[i],
+      'listado[j] vale: ',
+      listado[j]
     )
-    let counter = 1
-
-    console.log(' 1 el array eraser es: ', eraser)
-    let k = i
-    while ((eraser[k] = original[j] && counter < 2)) {
-      console.log('bucle while para borrado. Vuelta: ', counter)
-      console.log('counter', counter)
-      console.log(
-        '2 el array eraser es: ',
-        eraser,
-        'duplicates es: ',
-        duplicates
-      )
-      console.log('conteo a: ' + counter)
-      console.log(original[j], '=', eraser[k])
-      if ((original[j] = eraser[k] && counter < 2)) {
-        console.log('Se cumple la condición if, son iguales.')
-        console.log(original[j], '=', eraser[k])
-        duplicates.splice(j, 1)
-        console.log('Se borra duplicado y queda: ', duplicates)
-      } else {
-        console.log('son distintos')
-        console.log(original[j], '=', eraser[k])
-      }
-
-      j = j + 1
-      console.log('6 el array eraser es: ', eraser)
-      counter = counter + 1
+    if (listado[i] === listado[j]) {
+      listado.splice(i, 1)
+      i = 0
     }
-    k = k + 1
-  }
-  console.log(eraser)
-  console.log(duplicates)*/
 
-  // console.log('El listado sin duplicados es: ' + duplicates)
+    console.log('vuelta bucle while nº ', vwhile)
+    vwhile = vwhile + 1
+  }
+  if (listado[i] === listado[j]) {
+    listado.splice(i, 1)
+    i = 0
+  }
+  console.log('vuelta bucle for nº ', vfor)
+  vfor = vfor + 1
 }
+console.log(listado)
+
 removeDuplicates(duplicates)

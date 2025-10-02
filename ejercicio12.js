@@ -3,6 +3,8 @@ Valores únicos: Crea una función que reciba por parámetro un array y comprueb
 Pista: puedes generar un nuevo array y devolverlo.
 Puedes usar este array para probar tu función:*/
 const listado = [
+  'ketchup',
+  'ketchup',
   'sushi',
   'pizza',
   'burger',
@@ -13,40 +15,37 @@ const listado = [
   'chicken',
   'onion rings',
   'pasta',
-  'soda'
+  'soda',
+  'beer',
+  'beer',
+  'beer'
 ]
-let vfor = 1
-for (let i = 0; i < listado.length; i++) {
-  let j = i + 1
-  console.log('listado[i] vale: ', listado[i], 'listado[j] vale: ', listado[j])
-
-  let vwhile = 1
-  while (listado[i] != listado[j] && j < listado.length - 1) {
-    j = j + 1
-    position = j
-
-    console.log('i vale: ', i, ' j vale: ', j)
-    console.log(
-      'listado[i] vale: ',
-      listado[i],
-      'listado[j] vale: ',
-      listado[j]
-    )
+//  esta función elimina los duplicados y los repetidos.
+function removeDuplicates(list) {
+  // bucle for que recorre el array "listado"
+  for (let i = 0; i < listado.length; i++) {
+    let j = i + 1
+    //bucle while que compara uno a uno los elementos en busca de duplicados.
+    while (listado[i] != listado[j] && j < listado.length - 1) {
+      j = j + 1
+      position = j
+      if (listado[i] === listado[j]) {
+        listado.splice(i, 1)
+        i = 0
+      }
+    }
     if (listado[i] === listado[j]) {
       listado.splice(i, 1)
       i = 0
     }
-
-    console.log('vuelta bucle while nº ', vwhile)
-    vwhile = vwhile + 1
   }
-  if (listado[i] === listado[j]) {
-    listado.splice(i, 1)
-    i = 0
-  }
-  console.log('vuelta bucle for nº ', vfor)
-  vfor = vfor + 1
+  console.log('Listado sin duplicados: ', listado)
 }
-console.log(listado)
 
-removeDuplicates(duplicates)
+removeDuplicates(listado)
+/* // 'ketchup',   'sushi',
+  'burger',    'potatoe',
+  'ice-cream', 'pizza',
+  'chicken',   'onion rings',
+  'pasta',     'soda',
+  'beer'  */

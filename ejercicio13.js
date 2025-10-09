@@ -15,24 +15,21 @@ const names = [
   'Jessica',
   'Marc'
 ]
-function nameFinder(nameList) {
+function nameFinder() {
   let array = []
-  let name = 'Marc'
+  let name = 'Tete'
+  let existe
+  let position
   for (let i = 0; i < names.length; i++) {
     if (name === names[i]) {
-      console.log('El nombre existe y es: ', names[i])
-      let position = i + 1
-      console.log('El nombre está anotado en la ' + position + 'ª posición')
-    }
+      existe = 'si'
 
-    if (name != names[i]) {
-      array[i] = names[i]
+      position = i + 1
     }
-
-    //console.log(array)
   }
-  if (array.length === names.length) {
-    console.log('no existe')
+  console.log(Boolean(existe))
+  if (Boolean(existe) === true) {
+    console.log('El nombre está anotado en la ' + position + 'ª posición')
   }
 }
 

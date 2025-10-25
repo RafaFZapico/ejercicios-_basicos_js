@@ -4,11 +4,12 @@ Completa la función denominada sumNumbers que toma un array de números como ar
 Puedes usar este array para probar tu función:*/
 const numbers = [1, 2, 3, 5, 45, 37, 58]
 function sumNumbers(numberList) {
-  let sum = numbers[0]
-  for (let i = 1; i < numbers.length; i++) {
-    sum = sum + numbers[i]
+  let sum = numberList[0]
+  for (let i = 1; i < numberList.length; i++) {
+    sum = sum + numberList[i]
   }
   console.log(sum)
 }
 
 sumNumbers(numbers)
+// 151

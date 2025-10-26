@@ -11,7 +11,8 @@ const toys = [
   { id: 60, name: 'Nerf Blaster' },
   { id: 71, name: 'Sylvanian Families - Familia gato' }
 ]
-// variante 1
+//? variante 1
+
 const toys2 = []
 let j = 0
 for (const i of toys) {
@@ -21,7 +22,7 @@ for (const i of toys) {
   }
 }
 console.log('El listado queda de la siguiente manera: ', toys2)
-/*
+/* RESULTADO 
 PS C:\Users\Rafael\Desktop\repositorios curso ciber\ejercicios-_basicos_js> node ejercicio19.js
 El listado queda de la siguiente manera:  [
   { id: 5, name: 'Transformers' },
@@ -29,3 +30,35 @@ El listado queda de la siguiente manera:  [
   { id: 23, name: 'Hot Wheels' },
   { id: 60, name: 'Nerf Blaster' }
 ] */
+//? Variante 2
+
+let position = 0
+let positions = []
+let k = 0
+for (const i of toys) {
+  if (i.name.includes('gato') === true) {
+    positions[k] = position
+    k++
+  }
+  position++
+}
+let l = 0
+let m = 0
+for (let i = 0; i < toys.length; i++) {
+  if (i === positions[l] - m) {
+    toys.splice(i, 1)
+    l++
+    m++
+    i = i - 1
+  }
+}
+console.log(toys)
+/* RESULTADO 2
+PS C:\Users\Rafael\Desktop\repositorios curso ciber\ejercicios-_basicos_js> node ejercicio19.js
+[
+  { id: 5, name: 'Transformers' },
+  { id: 11, name: 'LEGO' },
+  { id: 23, name: 'Hot Wheels' },
+  { id: 60, name: 'Nerf Blaster' }
+]
+*/

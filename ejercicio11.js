@@ -13,26 +13,33 @@ const mixedElements = [
   8,
   'Hola mundo'
 ]
-function averageWord(list) {
+function averageWord(mixedlist) {
   let lengthelement = []
-  for (let i = 0; i < mixedElements.length; i++) {
-    let element = mixedElements[i]
-    if (typeof mixedElements[i] === 'string') {
-      for (let j = 0; j <= element.length; j++) {
-        lengthelement[i] = j
-      }
+  // bucle for para recorrer el listado mezclado de elementos
+  let k = 0
+  for (let i = 0; i < mixedlist.length; i++) {
+    let element = mixedlist[i]
+    if (typeof mixedlist[i] === 'string') {
+      lengthelement[k] = element.length
+      k++
     } else {
-      lengthelement[i] = mixedElements[i]
+      lengthelement[k] = element
+      k++
     }
   }
-  let countelements = mixedElements.length
-  function average(lengthelement) {
-    let sum = lengthelement[0]
-    for (let i = 1; i < lengthelement.length; i++) {
-      sum = sum + lengthelement[i]
-    }
-    console.log(sum / lengthelement.length)
+  let sum = lengthelement[0]
+  // bucle for, que suma el contenido del array lengthelement
+  for (let i = 1; i < lengthelement.length; i++) {
+    sum = sum + lengthelement[i]
   }
-  average(lengthelement)
+  console.log(lengthelement)
+  console.log(sum / mixedlist.length)
 }
 averageWord(mixedElements)
+/*PS C:\Users\Rafael\Desktop\repositorios curso ciber\ejercicios-_basicos_js> node ejercicio11.js   
+[
+  6, 1, 6,  1, 11,
+  2, 8, 8, 10
+]
+5.888888888888889
+*/

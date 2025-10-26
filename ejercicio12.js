@@ -23,24 +23,18 @@ const listado = [
 //  esta función elimina los duplicados y los repetidos.
 function removeDuplicates(list) {
   // bucle for que recorre el array "listado"
-  for (let i = 0; i < listado.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     let j = i + 1
     //bucle while que compara uno a uno y elimina los elementos duplicados.
-    while (listado[i] != listado[j] && j < listado.length - 1) {
-      j = j + 1
-
-      if (listado[i] === listado[j]) {
-        listado.splice(i, 1)
-        i = 0
+    while (j <= list.length) {
+      if (list[i] === list[j]) {
+        list.splice(j, 1)
+      } else {
+        j++
       }
     }
-    // Este condicional if elimina los repetidos del final del listado.
-    if (listado[i] === listado[j]) {
-      listado.splice(i, 1)
-      i = 0
-    }
   }
-  console.log('Listado sin duplicados: ', listado)
+  console.log('Listado sin duplicados: ', list)
 }
 
 removeDuplicates(listado)

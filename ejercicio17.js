@@ -8,8 +8,6 @@ const alien = {
   origin: 'Unknown',
   weight: 180
 }
-/*const clavesalien = Object.keys(alien)
-console.log(clavesalien)*/
 for (const vari1 in alien) {
   console.log('La propiedad ', vari1, 'tiene como valor: ', alien[vari1])
 }

@@ -16,8 +16,8 @@ Puedes usar este array para probar tu función:*/
   'sleep',
   'code'
 ]*/
-let listado = ['a', 'a', 'b', 'b', 'c', 'a', 'c', 'c', 'd']
-/*let listado = [
+// let listado = ['a', 'a', 'b', 'b', 'c', 'a', 'c', 'c', 'd']
+let listado = [
   'code',
   'repeat',
   'eat',
@@ -29,8 +29,8 @@ let listado = ['a', 'a', 'b', 'b', 'c', 'a', 'c', 'c', 'd']
   'enjoy',
   'sleep',
   'code'
-]*/
-function countRepeated(listado) {
+]
+function countRepeated(list) {
   let element
   let j = 0
   let names = []
@@ -39,7 +39,7 @@ function countRepeated(listado) {
   let rep = []
   let k = 0
   let l
-  // Declaración de la funcion stringFinder que nos busca un elemento dentro de un array.
+  // Declaración de la funcion stringFinder que nos busca un elemento dentro de un array y será utilizada para buscar en el array names, que se crea para anotar los distintos elementos del array inicial "list"
   function stringFinder() {
     for (let i = 0; i < names.length; i++) {
       if (busc === names[i]) {
@@ -53,11 +53,11 @@ function countRepeated(listado) {
 
   // 1 Inicio de programa con bucle 1 while.
   let vwhile = 1
-  while (j >= 0 && j < listado.length) {
+  while (j >= 0 && j < list.length) {
     if (names.length === 0) {
       element = 'no'
     } else {
-      busc = listado[j]
+      busc = list[j]
       //2 llamada a stringFinder para buscar el elemento de listado[j] en el array names, nos dirá a través de la variable "element" si existe o no
       stringFinder(names)
     }
@@ -65,12 +65,12 @@ function countRepeated(listado) {
     // 3 condicional if.
     // Si elemento listado[j] no existe lo registramos en el array names y contamos el número de veces que aparece.
     if (element === 'no') {
-      names[k] = listado[j]
+      names[k] = list[j]
       l = j + 1
       let counter = 1
       // bucle while para contar elementos repetidos en el array listado.
-      while (l > j && l < listado.length) {
-        if (listado[j] === listado[l]) {
+      while (l > j && l < list.length) {
+        if (list[j] === list[l]) {
           counter++
         }
         l++

@@ -2,8 +2,8 @@
 b = a.reverse()
 console.log(b)*/
 //listado = ['a', 'b', 'c', 'a', 'd', 'e', 'b']
-//listado = ['a', 'a', 'a', 'b', 'c', 'a', 'a', 'a']
-listado = [
+listado = ['a', 'a', 'a', 'b', 'c', 'a', 'a', 'a']
+/*listado = [
   'sushi',
   'pizza',
   'burger',
@@ -15,7 +15,7 @@ listado = [
   'onion rings',
   'pasta',
   'soda'
-]
+]*/
 let vfor = 1
 for (let i = 0; i < listado.length; i++) {
   let j = i + 1

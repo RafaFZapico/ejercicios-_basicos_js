@@ -11,23 +11,21 @@ const toys = [
   { id: 60, name: 'Nerf Blaster' },
   { id: 71, name: 'Sylvanian Families - Familia gato' }
 ]
-const names = []
-const position = []
-for (let i = 0; i < toys.length; i++) {
-  names[i] = toys[i].name
-}
-console.log(names)
-// El siguiente bucle for of no funciona.
-/*for (const i of toys) {
-  //console.log(toys[i].name.includes('gato'))
-  if (toys[i].name.includes('gato')) {
-    console.log(toys[i])
-  }
-}*/
-// El siguiente bucle for si funciona e imprime por consola los juguetes que contienen nombre de gato.
-
-for (let i = 0; i < toys.length; i++) {
-  if (toys[i].name.includes('gato')) {
-    console.log(toys[i])
+// variante 1
+const toys2 = []
+let j = 0
+for (const i of toys) {
+  if (i.name.includes('gato') === false) {
+    toys2[j] = i
+    j++
   }
 }
+console.log('El listado queda de la siguiente manera: ', toys2)
+/*
+PS C:\Users\Rafael\Desktop\repositorios curso ciber\ejercicios-_basicos_js> node ejercicio19.js
+El listado queda de la siguiente manera:  [
+  { id: 5, name: 'Transformers' },
+  { id: 11, name: 'LEGO' },
+  { id: 23, name: 'Hot Wheels' },
+  { id: 60, name: 'Nerf Blaster' }
+] */

@@ -38,9 +38,12 @@ function removeDuplicates(list) {
 }
 
 removeDuplicates(listado)
-/* // 'ketchup',   'sushi',
-  'burger',    'potatoe',
-  'ice-cream', 'pizza',
-  'chicken',   'onion rings',
-  'pasta',     'soda',
-  'beer'  */
+/*PS C:\Users\Rafael\Desktop\repositorios curso ciber\ejercicios-_basicos_js> node ejercicio12.js   
+Listado sin duplicados:  [
+  'ketchup',     'sushi',
+  'pizza',       'burger',
+  'potatoe',     'pasta',
+  'ice-cream',   'chicken',
+  'onion rings', 'soda',
+  'beer'
+]*/
